@@ -2,6 +2,9 @@
 
 Transform SVG files to SVG components. Use [react-native-svg](https://github.com/react-native-community/react-native-svg#installation).
 
+
+[![Version](https://img.shields.io/npm/v/react-native-transform-svg-file)](https://www.npmjs.com/package/react-native-svg) 
+
 ### Install library from npm
 ```
     yarn add react-native-transform-svg-file
