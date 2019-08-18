@@ -1,0 +1,23 @@
+import React from 'react';
+import Svg,{
+    Circle,
+    Ellipse,
+    G ,
+    LinearGradient,
+    RadialGradient,
+    Line,
+    Path,
+    Polygon,
+    Polyline,
+    Rect,
+    Text,
+    TSpan,
+    Defs,
+    Stop
+} from 'react-native-svg';
+
+const ##NAME## = (props) => (
+##SVG##
+);
+
+export default ##NAME##;

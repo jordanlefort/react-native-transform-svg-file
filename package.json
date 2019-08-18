@@ -1,0 +1,16 @@
+{
+  "name": "react-native-transform-svg-file-to-svg-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rntsf": "node index.js -g svg:component"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "minimist": "^1.2.0"
+  }
+}

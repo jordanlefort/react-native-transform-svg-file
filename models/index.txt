@@ -1,0 +1,22 @@
+import React from 'react';
+import { ScrollView } from 'react-native';
+
+##IMPORT##
+
+const Icons = (props) => {
+    switch(props.name){
+##OBJECTCOMPONENT##
+        default:
+            console.warn(`SVG: ${props.name}, not found`);
+            return null;
+    }
+}
+
+export const ViewMySVG = () => (
+    <ScrollView>
+##VIEWMYSVG##
+    </ScrollView>
+);
+
+
+export default ((props) => Icons(props));
