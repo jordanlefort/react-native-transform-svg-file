@@ -5,13 +5,13 @@ let iconModel;
 let indexModel;
 
 
-files.readIconModel((err, data) => { iconModel = data;});
-files.readIndexModel((err, data) => { indexModel = data;});
 
 
 const init = async (SVG_DIR, COMPONENT_DIR) => {
     files.init(SVG_DIR, COMPONENT_DIR);
     files.createComponentsDir();
+    files.readIconModel((err, data) => { iconModel = data;});
+    files.readIndexModel((err, data) => { indexModel = data;});
     let SVGDirContent = await files.readSVGDir();
     SVGDirContent = files.filterSVGDir(SVGDirContent);
     let SVGFilesContent = await files.readSVGFiles(SVGDirContent);

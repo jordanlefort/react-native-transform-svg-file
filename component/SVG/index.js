@@ -1,12 +1,9 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 
-##IMPORT##
-
 const SVG = (props) => {
     switch(props.name){
-##OBJECTCOMPONENT##
-        default:
+            default:
             console.warn(`SVG: ${props.name}, not found`);
             return null;
     }
@@ -14,7 +11,7 @@ const SVG = (props) => {
 
 export const ViewMySVG = () => (
     <ScrollView>
-##VIEWMYSVG##
+
     </ScrollView>
 );
 

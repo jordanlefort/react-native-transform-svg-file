@@ -5,8 +5,8 @@ let SVG_DIR_PATH;
 let COMPONENT_DIR_PATH;
 
 const init = (SVG_DIR, COMPONENT_DIR) => {
-    SVG_DIR_PATH = path.join(__dirname, `../${SVG_DIR}`) ;
-    COMPONENT_DIR_PATH = path.join(__dirname, `../${COMPONENT_DIR}`) ;
+    SVG_DIR_PATH = SVG_DIR;
+    COMPONENT_DIR_PATH = COMPONENT_DIR;
 }
 
 const readSVGDir = () => new Promise((res, rej) => fs.readdir(SVG_DIR_PATH, (err, data) => {
@@ -31,25 +31,25 @@ const createComponentsDir = () => {
     fs.access(COMPONENT_DIR_PATH, fs.constants.F_OK, (err) => {
        if(err) return fs.mkdir(COMPONENT_DIR_PATH);
     });
-    fs.access(path.join(COMPONENT_DIR_PATH, 'SVGIcons'), fs.constants.F_OK, (err) => {
-        if(err) return fs.mkdir(path.join(COMPONENT_DIR_PATH, 'SVGIcons'));
+    fs.access(path.join(COMPONENT_DIR_PATH, 'SVG'), fs.constants.F_OK, (err) => {
+        if(err) return fs.mkdir(path.join(COMPONENT_DIR_PATH, 'SVG'));
     });
 };
 
-const readIconModel = (cb) => fs.readFile(path.join(__dirname, "../models/Icon.txt"), 'UTF8', cb);
-const readIndexModel = (cb) => fs.readFile(path.join(__dirname, "../models/index.txt"), 'UTF8', cb);
+const readIconModel = (cb) => fs.readFile(path.join(COMPONENT_DIR_PATH, "../models/SVG.txt"), 'UTF8', cb);
+const readIndexModel = (cb) => fs.readFile(path.join(COMPONENT_DIR_PATH, "../models/index.txt"), 'UTF8', cb);
 
 const createComponents = (SVGRNComponents, indexComponent) => {
     Promise.all(SVGRNComponents.map(svg => {
         return new Promise((res, rej) => {
-            const COMPONENT_FILE_PATH = path.join(COMPONENT_DIR_PATH, `SVGIcons/${svg.name}.js`);
+            const COMPONENT_FILE_PATH = path.join(COMPONENT_DIR_PATH, `SVG/${svg.name}.js`);
             fs.writeFile(COMPONENT_FILE_PATH, svg.component, (err, data) => {
                 console.log(style.info(`${svg.name} svg generated.`));
                 res(true);
             });
         })
     })).then(() => {
-        fs.writeFile(path.join(COMPONENT_DIR_PATH, "SVGIcons/index.js"), indexComponent, (err, data) => {
+        fs.writeFile(path.join(COMPONENT_DIR_PATH, "SVG/index.js"), indexComponent, (err, data) => {
             console.log(style.success("!!! RDY to use !!!"));
         });
     });
