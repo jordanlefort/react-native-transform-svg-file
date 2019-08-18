@@ -52,14 +52,13 @@ export default ExampleSVG;
 
 | Prop | Type | Default | Note |
 |---|---|---|---|
-| `name` | `String` |  | Name of SVGfile [more details](#name)
+| `name` | `String` |  | Name of SVGfile [more details](#svg-name-props)
 | `height` | `String` | width of svg file  | Override height property in SVG component 
 | `width` | `String` | height of svg file | Override width property in SVG component
 | `viewBow` | `String` | viewBox of svg file | Override viewBox property in SVG component
 
 
 ### SVG Name props
-#name
 
 ###### "my-svg-file.svg" = MySvgFile;
 ###### "MySVGFile.svg" = MySVGFile;
