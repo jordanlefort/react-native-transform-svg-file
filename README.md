@@ -24,6 +24,10 @@ Go to [react-native-svg](https://github.com/react-native-community/react-native-
 
 ### Generate SVG components
 
+- create directory in your react-native application
+- store your svg in this directory
+- launch 
+
 ```
     rntsf -g svg_directory_path
 ```
@@ -43,4 +47,21 @@ const ExampleSVG = () => (
 
 export default ExampleSVG;
 ```
+
+### Props
+
+| Prop | Type | Default | Note |
+|---|---|---|---|
+| `name` | `String` |  | Name of SVGfile [more details](#name)
+| `height` | `String` | width of svg file  | Override height property in SVG component 
+| `width` | `String` | height of svg file | Override width property in SVG component
+| `viewBow` | `String` | viewBox of svg file | Override viewBox property in SVG component
+
+
+### SVG Name props
+#name
+
+###### "my-svg-file.svg" = MySvgFile;
+###### "MySVGFile.svg" = MySVGFile;
+
 
